@@ -1,0 +1,61 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+}
+
+.App {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.url-shortener input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.url-shortener button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.url-shortener button:hover {
+  background-color: #0056b3;
+}
+
+.result, .info, .analytics {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.error {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #ffebee;
+  border: 1px solid #ffcdd2;
+  border-radius: 4px;
+  color: #c62828;
+}
+
+.analytics ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.analytics li {
+  padding: 5px;
+  background-color: #eee;
+  margin: 5px 0;
+  border-radius: 4px;
+}
