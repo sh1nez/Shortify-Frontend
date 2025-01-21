@@ -9,18 +9,29 @@ function App() {
   const [expiresAt, setExpiresAt] = useState('');
   const [shortUrl, setShortUrl] = useState('');
   const [error, setError] = useState('');
-
   // Состояния для информации о ссылке и аналитики
   const [urlInfo, setUrlInfo] = useState(null);
   const [analyticsData, setAnalyticsData] = useState(null);
 
   // Базовый URL для API
-  const API_BASE_URL = 'http://localhost:5000';
+  const API_BASE_URL = 'https://3205.luvshop.ru/api';
+
+  // Функция для проверки, что URL начинается с http:// или https://
+  const isValidUrl = (url) => {
+    const pattern = /^https?:\/\//i; // Регулярное выражение для проверки
+    return pattern.test(url);
+  };
 
   // Функция для обработки сокращения URL
   const handleShorten = async () => {
     if (!originalUrl) {
       setError('Пожалуйста, введите URL');
+      return;
+    }
+
+    // Проверка, что URL начинается с http:// или https://
+    if (!isValidUrl(originalUrl)) {
+      setError('URL должен начинаться с http:// или https://');
       return;
     }
 
@@ -104,7 +115,7 @@ function App() {
           type="text"
           value={originalUrl}
           onChange={(e) => setOriginalUrl(e.target.value)}
-          placeholder="Введите оригинальный URL"
+          placeholder="Введите оригинальный URL (начинается с http:// или https://)"
         />
 
         {/* Поле для ввода алиаса */}
